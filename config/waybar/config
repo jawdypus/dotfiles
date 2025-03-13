@@ -8,7 +8,7 @@
     "modules-right": ["custom/keyboard-layout", "network", "bluetooth", "pulseaudio", "battery"],
     
     "custom/distro": {
-        "format": "",
+        "format": "󰇥",
         "tooltip": "Application Menu",
         "on-click": "wlogout",
         "on-click-right": "wlogout"
