@@ -16,7 +16,9 @@ This is my dotfiles.
 ## Installation:
 ### Fedora:
 Intall what is already in dnf:
-```sh sudo dnf install alacritty waybar wlogout rofi fontawesome-fonts mako wlsunset```
+```sh
+sudo dnf install alacritty waybar wlogout rofi fontawesome-fonts mako wlsunset
+```
 Install swayfx and swaylock effects:
 ```sh
 # Enable copr of swayfx
