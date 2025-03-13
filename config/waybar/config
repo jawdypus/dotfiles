@@ -1,0 +1,146 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 30,
+    "spacing": 4,
+    "modules-left": ["custom/distro", "sway/workspaces", "sway/window"],
+    "modules-center": ["tray", "custom/notifications", "clock"],
+    "modules-right": ["custom/keyboard-layout", "network", "bluetooth", "pulseaudio", "battery"],
+    
+    "custom/distro": {
+        "format": "",
+        "tooltip": "Application Menu",
+        "on-click": "wlogout",
+        "on-click-right": "wlogout"
+    },
+    
+    "sway/workspaces": {
+        "format": "{icon}",
+        "on-click": "activate",
+        "all-outputs": true,
+        "format-icons": {
+            "1": "",
+            "2": "",
+            "3": "",
+            "4": "",
+            "5": "",
+            "urgent": "",
+            "focused": "",
+            "default": ""
+        },
+        "on-scroll-up": "swaymsg workspace next_on_output",
+        "on-scroll-down": "swaymsg workspace prev_on_output",
+        "disable-scroll": false,
+        "disable-scroll-wraparound": false,
+        "enable-bar": true,
+        "disable-markup": false,
+        "current-only": false,
+        "persistent_workspaces": {
+            "1": [],
+            "2": [],
+            "3": [],
+            "4": [],
+            "5": []
+        }
+    },
+    
+    "sway/window": {
+        "format": "{}",
+        "max-length": 50,
+        "separate-outputs": true
+    },
+
+    "tray": {
+        "icon-size": 16,
+        "spacing": 10
+    },
+
+    "custom/notifications": {
+        "exec": "~/.config/sway/scripts/notification-toggle.sh",
+        "return-type": "json",
+        "interval": 1,
+        "on-click": "~/.config/sway/scripts/notification-toggle.sh toggle",
+        "format": "{}"
+    },
+
+    "clock": {
+        "format": "{:%I:%M %p | %a, %b %d}",
+        "format-alt": "{:%Y-%m-%d}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "calendar": {
+            "mode"          : "month",
+            "weeks-pos"     : "right",
+            "on-scroll"     : 1,
+            "on-click-right": "mode",
+            "format": {
+                "months":     "<span color='#ffead3'><b>{}</b></span>",
+                "days":       "<span color='#ecc6d9'><b>{}</b></span>",
+                "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
+                "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
+                "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
+            }
+        },
+        "actions": {
+            "on-click": "calendar",
+            "on-click-right": "mode",
+            "on-scroll-up": "shift_up",
+            "on-scroll-down": "shift_down"
+        }
+    },
+    
+    "battery": {
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon} {capacity}%",
+        "format-charging": "󰂄 {capacity}%",
+        "format-plugged": "󰂄 {capacity}%",
+        "format-alt": "{icon} {time}",
+        "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+    },
+    
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-muted": "󰸈 Muted",
+        "format-icons": {
+            "default": ["󰕿", "󰖀", "󰕾"]
+        },
+        "on-click": "pavucontrol",
+        "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+    },
+    
+    "bluetooth": {
+        "format": "󰂯 {status}",
+        "format-connected": "󰂱 {device_alias}",
+        "format-connected-battery": "󰂱 {device_alias} {device_battery_percentage}%",
+        "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+        "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+        "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
+        "on-click": "blueman-manager"
+    },
+    
+    "network": {
+        "format-wifi": "{icon} {essid}",
+        "format-ethernet": " {ipaddr}/{cidr}",
+        "format-disconnected": "󰇨 Disconnected",
+        "tooltip": false,
+        "on-click": "alacritty --title \"network_script\" -e ~/.config/waybar/scripts/wifi/wifi_popup.py",
+    	"interval": 5,
+        "format-icons": {
+            "wifi": ["󰤟", "󰤢", "󰤥", "󰤨"],
+            "ethernet": "",
+            "disconnected": "󰇨",
+        },
+    },
+
+   "custom/keyboard-layout": {
+        "exec": "~/.config/waybar/scripts/keyboard/get_layout.sh",
+        "on-click": "swaymsg input type:keyboard xkb_switch_layout next",
+        "interval": 1,
+        "format": "{}",
+        "tooltip": false
+    } 
+}

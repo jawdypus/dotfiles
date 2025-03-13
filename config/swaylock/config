@@ -1,0 +1,59 @@
+# Swaylock-effects configuration with Catppuccin Mocha theme
+# Save this file to ~/.config/swaylock/config
+
+# Screenshot and blur effect
+screenshots
+effect-blur=12x5
+effect-vignette=0.5:0.5
+fade-in=0.2
+
+# Catppuccin Mocha colors
+color=1e1e2e
+inside-color=00000000
+line-color=00000000
+ring-color=cba6f7
+text-color=cdd6f4
+key-hl-color=f5e0dc
+bs-hl-color=f38ba8
+separator-color=00000000
+
+# Lock indicators with transparency
+inside-ver-color=89b4fa88
+line-ver-color=00000000
+ring-ver-color=89b4faaa
+text-ver-color=cdd6f4
+
+inside-wrong-color=f38ba888
+line-wrong-color=00000000
+ring-wrong-color=f38ba8aa
+text-wrong-color=cdd6f4
+
+inside-clear-color=a6e3a188
+line-clear-color=00000000
+ring-clear-color=a6e3a1aa
+text-clear-color=cdd6f4
+
+# Compact clock and date display
+clock
+timestr=%H:%M
+datestr=%a, %b %d
+indicator
+indicator-radius=150
+indicator-thickness=15
+
+# Different font sizes for time and date
+time-font-size=38
+date-font-size=24
+
+# Scaling for high-DPI displays
+scaling=fill
+font=JetBrainsMono Nerd Font
+
+# Additional effects
+indicator-caps-lock
+ignore-empty-password
+grace=2
+
+# Positioning
+indicator-x-position=960
+indicator-y-position=540

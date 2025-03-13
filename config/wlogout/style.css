@@ -1,0 +1,49 @@
+* {
+	background-image: none;
+}
+
+window {
+	background-color: rgba(30, 30, 46, 0.9); /* Mocha base with opacity */
+}
+
+button {
+    color: #cdd6f4; /* Mocha text */
+    background-color: #1e1e2e; /* Mocha base */
+    border-style: solid;
+    border-width: 2px;
+    border-color: #313244; /* Mocha surface0 */
+    border-radius: 8px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 25%;
+    margin: 5px;
+}
+
+button:focus, button:active, button:hover {
+	background-color: #313244; /* Mocha surface0 */
+	border-color: #89b4fa; /* Mocha blue */
+}
+
+#lock {
+    background-image: image(url("/usr/share/wlogout/icons/lock.png"));
+}
+
+#logout {
+    background-image: image(url("/usr/share/wlogout/icons/logout.png"));
+}
+
+#suspend {
+    background-image: image(url("/usr/share/wlogout/icons/suspend.png"));
+}
+
+#hibernate {
+    background-image: image(url("/usr/share/wlogout/icons/hibernate.png"));
+}
+
+#shutdown {
+    background-image: image(url("/usr/share/wlogout/icons/shutdown.png"));
+}
+
+#reboot {
+    background-image: image(url("/usr/share/wlogout/icons/reboot.png"));
+}
