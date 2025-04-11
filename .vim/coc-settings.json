@@ -1,0 +1,18 @@
+{
+  "suggest.noselect": false,
+  "suggest.enablePreselect": false,
+  "suggest.snippetIndicator": " ►",
+  "suggest.timeout": 2000,
+  "coc.preferences.formatOnSaveFiletypes": ["python", "c", "cpp"],
+  "diagnostic.errorSign": "✖",
+  "diagnostic.warningSign": "⚠",
+  "diagnostic.infoSign": "ℹ",
+  "diagnostic.hintSign": "➤",
+  "python.linting.enabled": true,
+  "python.linting.pylintEnabled": true,
+  "python.formatting.provider": "black",
+  "python.jediEnabled": false,
+  "clangd.path": "clangd",
+  "clangd.arguments": ["--background-index", "--suggest-missing-includes"],
+  "clangd.semanticHighlighting": true
+}
