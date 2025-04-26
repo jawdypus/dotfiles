@@ -8,3 +8,8 @@ general.import = [
 
 [window]
 opacity = 0.9
+
+[terminal]
+
+[terminal.shell]
+program = "/bin/zsh"
